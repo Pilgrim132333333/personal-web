@@ -3,6 +3,7 @@ const menuButton = document.querySelector("[data-menu-button]");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 const languageButtons = document.querySelectorAll("[data-language]");
 const renderTargets = document.querySelectorAll("[data-render]");
+const hero = document.querySelector(".hero");
 const projectModal = document.querySelector("[data-project-modal]");
 const projectModalLabel = document.querySelector("[data-project-label]");
 const projectModalTitle = document.querySelector("[data-project-title]");
@@ -18,7 +19,7 @@ const translations = {
       title: "郭梓耕 | 个人介绍",
       description: "郭梓耕的个人介绍网站：关于兴趣、学习路径、项目故事、技术探索和联系方式。",
     },
-    brand: "郭梓耕",
+    brand: "Zigeng's Homepage",
     language: { label: "语言切换" },
     nav: {
       aria: "主导航",
@@ -37,16 +38,17 @@ const translations = {
       closeLabel: "关闭项目详情",
     },
     hero: {
-      eyebrow: "你好，我是",
-      title: "郭梓耕",
-      copy:
-        "一个正在把计算机科学、AI 工具和产品体验放在一起探索的人。我喜欢从真实问题出发，把零散材料整理成可以运行、可以解释、也能被别人使用的东西。",
-      primary: "认识我的思考方式",
-      secondary: "看看我做过什么",
-      panelLabel: "当前状态",
-      panelKicker: "Currently",
-      panelTitle: "Computer Science · AI Applications · Full-Stack",
-      panelCopy: "宁波诺丁汉大学计算机科学本科生，正在寻找软件开发、全栈开发和 AI 应用方向的实习机会。",
+      eyebrow: "Zigeng's Homepage",
+      title: "Zigeng Guo",
+      chineseName: "郭梓耕",
+      role: "Computer Science · AI Applications · Full-Stack",
+      taglinePrefix: "Building tools that",
+      highlight: "organize knowledge",
+      actionsLabel: "首页快捷入口",
+      linkAbout: "About",
+      linkProjects: "Projects",
+      linkEmail: "Email",
+      explore: "Explore",
     },
     signals: {
       aria: "个人线索",
@@ -224,7 +226,7 @@ const translations = {
       title: "Zigeng Guo | Personal Introduction",
       description: "Zigeng Guo's personal introduction site: interests, learning path, project stories, technical exploration, and contact.",
     },
-    brand: "Zigeng Guo",
+    brand: "Zigeng's Homepage",
     language: { label: "Language switcher" },
     nav: {
       aria: "Main navigation",
@@ -243,16 +245,17 @@ const translations = {
       closeLabel: "Close project detail",
     },
     hero: {
-      eyebrow: "Hi, I am",
+      eyebrow: "Zigeng's Homepage",
       title: "Zigeng Guo",
-      copy:
-        "A computer science student exploring the intersection of AI tools, engineering, and product experience. I like starting from real problems and turning scattered material into things that run, explain themselves, and help other people.",
-      primary: "How I Think",
-      secondary: "What I Build",
-      panelLabel: "Current status",
-      panelKicker: "Currently",
-      panelTitle: "Computer Science · AI Applications · Full-Stack",
-      panelCopy: "Computer Science undergraduate at the University of Nottingham Ningbo China, looking for software development, full-stack, and AI application internships.",
+      chineseName: "郭梓耕",
+      role: "Computer Science · AI Applications · Full-Stack",
+      taglinePrefix: "Building tools that",
+      highlight: "organize knowledge",
+      actionsLabel: "Homepage quick links",
+      linkAbout: "About",
+      linkProjects: "Projects",
+      linkEmail: "Email",
+      explore: "Explore",
     },
     signals: {
       aria: "Personal signals",
@@ -617,6 +620,14 @@ const syncHeader = () => {
 syncHeader();
 applyLanguage(getCurrentLanguage());
 window.addEventListener("scroll", syncHeader, { passive: true });
+
+hero.addEventListener("pointermove", (event) => {
+  const bounds = hero.getBoundingClientRect();
+  const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+  const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+  document.body.style.setProperty("--pointer-x", `${x}%`);
+  document.body.style.setProperty("--pointer-y", `${y}%`);
+});
 
 menuButton.addEventListener("click", () => {
   const isOpen = mobileNav.classList.toggle("is-open");
