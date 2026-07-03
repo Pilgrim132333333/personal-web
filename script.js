@@ -38,6 +38,7 @@ const translations = {
     },
     hero: {
       eyebrow: "Zigeng's Homepage",
+      initials: "ZG",
       title: "Zigeng Guo",
       chineseName: "郭梓耕",
       role: "Computer Science · AI Applications · Full-Stack",
@@ -48,6 +49,10 @@ const translations = {
       linkProjects: "Projects",
       linkEmail: "Email",
       explore: "Explore",
+      metaLabel: "个人关键词",
+      metaOne: "AI Applications",
+      metaTwo: "Full-Stack Systems",
+      metaThree: "Visual Reasoning",
     },
     about: {
       kicker: "About Me",
@@ -217,6 +222,7 @@ const translations = {
     },
     hero: {
       eyebrow: "Zigeng's Homepage",
+      initials: "ZG",
       title: "Zigeng Guo",
       chineseName: "郭梓耕",
       role: "Computer Science · AI Applications · Full-Stack",
@@ -227,6 +233,10 @@ const translations = {
       linkProjects: "Projects",
       linkEmail: "Email",
       explore: "Explore",
+      metaLabel: "Personal keywords",
+      metaOne: "AI Applications",
+      metaTwo: "Full-Stack Systems",
+      metaThree: "Visual Reasoning",
     },
     about: {
       kicker: "About Me",
@@ -433,11 +443,12 @@ const renderExpandable = (target, items, options = {}) => {
 
 const renderProjectList = (target, dictionary) => {
   target.replaceChildren(
-    ...dictionary.workbench.items.map((item) => {
+    ...dictionary.workbench.items.map((item, index) => {
       const button = createElement("button", "project-teaser");
       button.type = "button";
       button.dataset.projectId = item.id;
       button.append(
+        createElement("span", "project-index", String(index + 1).padStart(2, "0")),
         createElement("span", "project-teaser-label", item.label),
         createElement("strong", "", item.title),
         createElement("p", "", item.summary),

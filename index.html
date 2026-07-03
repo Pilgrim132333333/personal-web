@@ -46,12 +46,12 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
-        <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
-        <div class="hero-sheen" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-ring hero-ring-a" aria-hidden="true"></div>
+        <div class="hero-ring hero-ring-b" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="hero-avatar" aria-hidden="true">
-            <span>ZG</span>
+            <span data-i18n="hero.initials">ZG</span>
           </div>
           <p class="eyebrow" data-i18n="hero.eyebrow">Zigeng's Homepage</p>
           <h1 id="hero-title">
@@ -70,10 +70,28 @@
           </div>
           <a class="explore-cue" href="#about" data-i18n="hero.explore">Explore</a>
         </div>
+        <div class="hero-meta" aria-label="个人关键词" data-i18n-attr="aria-label:hero.metaLabel">
+          <span data-i18n="hero.metaOne">AI Applications</span>
+          <span data-i18n="hero.metaTwo">Full-Stack Systems</span>
+          <span data-i18n="hero.metaThree">Visual Reasoning</span>
+        </div>
       </section>
 
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>AI APPLICATIONS</span>
+          <span>ENGINEERING SYSTEMS</span>
+          <span>VISUAL REASONING</span>
+          <span>KNOWLEDGE TOOLS</span>
+          <span>AI APPLICATIONS</span>
+          <span>ENGINEERING SYSTEMS</span>
+          <span>VISUAL REASONING</span>
+          <span>KNOWLEDGE TOOLS</span>
+        </div>
+      </div>
+
+      <section class="about-section numbered-section" id="about" aria-labelledby="about-title" data-section-number="01">
+        <div class="section-heading" data-section-number="01">
           <p class="section-kicker" data-i18n="about.kicker">About Me</p>
           <h2 id="about-title" data-i18n="about.title">我关注怎样把想法变成清晰、可靠、可使用的东西。</h2>
           <p class="section-copy" data-i18n="about.copy">
@@ -83,31 +101,34 @@
         <div class="about-layout" data-render="about"></div>
       </section>
 
-      <section class="workbench-section" id="workbench" aria-labelledby="workbench-title">
-        <div class="section-heading">
+      <section class="workbench-section numbered-section" id="workbench" aria-labelledby="workbench-title" data-section-number="02">
+        <div class="section-heading" data-section-number="02">
           <p class="section-kicker" data-i18n="workbench.kicker">Workbench</p>
+          <h2 id="workbench-title" data-i18n="workbench.title">我做过的东西，以及它们背后的问题</h2>
+          <p class="section-copy" data-i18n="workbench.copy">点击任意项目，会跳出独立的项目详情页面，里面可以继续扩展背景、目标、方法和收获。</p>
         </div>
         <div class="project-list" data-render="workbench"></div>
       </section>
 
-      <section class="path-section" id="path" aria-labelledby="path-title">
-        <div class="section-heading">
+      <section class="path-section numbered-section" id="path" aria-labelledby="path-title" data-section-number="03">
+        <div class="section-heading" data-section-number="03">
           <p class="section-kicker" data-i18n="path.kicker">Path</p>
           <h2 id="path-title" data-i18n="path.title">实习经历</h2>
+          <p class="section-copy" data-i18n="path.copy">这里不再铺开完整经历，只简单说明我在哪些真实场景里做过事。</p>
         </div>
         <div class="internship-list" data-render="path"></div>
       </section>
 
-      <section class="toolkit-section" id="skills" aria-labelledby="toolkit-title">
-        <div class="section-heading">
+      <section class="toolkit-section numbered-section" id="skills" aria-labelledby="toolkit-title" data-section-number="04">
+        <div class="section-heading" data-section-number="04">
           <p class="section-kicker" data-i18n="toolkit.kicker">Toolkit</p>
           <h2 id="toolkit-title" data-i18n="toolkit.title">工具只是工具，真正重要的是我用它们解决什么。</h2>
         </div>
         <div class="toolkit-layout" data-render="toolkit"></div>
       </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div>
+      <section class="contact-section numbered-section" id="contact" aria-labelledby="contact-title" data-section-number="05">
+        <div class="section-heading" data-section-number="05">
           <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
           <h2 id="contact-title" data-i18n="contact.title">欢迎联系我。</h2>
         </div>
