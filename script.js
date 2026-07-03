@@ -17,7 +17,7 @@ const translations = {
   zh: {
     meta: {
       title: "郭梓耕 | 个人介绍",
-      description: "郭梓耕的个人介绍网站：关于兴趣、学习路径、项目故事、技术探索和联系方式。",
+      description: "郭梓耕的个人介绍网站：关于兴趣、学习路径、技术探索、项目和联系方式。",
     },
     brand: "Zigeng's Homepage",
     language: { label: "语言切换" },
@@ -28,7 +28,6 @@ const translations = {
       menuOpen: "打开导航",
       menuClose: "关闭导航",
       about: "关于我",
-      stories: "故事",
       workbench: "工作台",
       path: "路径",
       contact: "联系",
@@ -50,56 +49,29 @@ const translations = {
       linkEmail: "Email",
       explore: "Explore",
     },
-    signals: {
-      aria: "个人线索",
-      items: [
-        { label: "I study", title: "计算机科学", copy: "GPA 3.9 / 4.0，Ye Yaozhen 奖学金获得者。" },
-        { label: "I build", title: "AI + Web 工具", copy: "关注知识库、学习助手、后端系统和可用的产品体验。" },
-        { label: "I explore", title: "视觉与算法", copy: "从遗传算法到视觉推理，用实验理解抽象问题。" },
-      ],
-    },
-    intro: {
+    about: {
       kicker: "About Me",
-      title: "我不是只想展示经历，而是想让你看到我如何理解问题。",
+      title: "我关注怎样把想法变成清晰、可靠、可使用的东西。",
+      copy: "我学习计算机科学，也在 AI 应用、工程系统、算法实验和视觉研究里寻找自己的方向。",
       lead:
-        "简历会告诉你我会 Java、Python、C++、Vue.js、Spring Boot 和 MySQL；这个网站更想告诉你：我为什么会对 AI 学习助手、算法优化、计算机视觉和工程系统感兴趣。",
-      notes: [
-        "我喜欢把看起来很大的问题拆成可以验证的小步骤。",
-        "我会在技术实现之外关注使用者到底能不能顺手地完成目标。",
-        "我正在寻找能把工程、数据和 AI 应用连接起来的真实团队环境。",
+        "我学习计算机科学，也在 AI 应用、工程系统、算法实验和视觉研究里寻找自己的方向。比起罗列经历，我更想展示自己如何观察问题、拆解问题，并把它落到可以运行的产品或实验里。",
+      highlights: [
+        { label: "学习", title: "计算机科学", copy: "GPA 3.9 / 4.0，Ye Yaozhen 奖学金获得者。" },
+        { label: "构建", title: "AI + Web 工具", copy: "关注知识库、学习助手、后端系统和可用的产品体验。" },
+        { label: "探索", title: "视觉与算法", copy: "从遗传算法到视觉推理，用实验理解抽象问题。" },
       ],
-    },
-    stories: {
-      kicker: "Ways I Think",
-      title: "三个更接近“我是谁”的切面",
-      copy: "每一项都可以展开，里面不是履历清单，而是我如何把经历转化成判断和行动。",
-      items: [
+      notes: [
         {
-          label: "01",
-          title: "我对“学习工具”感兴趣，因为学习资料常常不是少，而是太散。",
-          summary: "AI 学习助手项目让我开始思考：工具应该帮助人建立自己的知识秩序。",
-          details: [
-            "在诺丁汉大学计算机系学习助手项目里，我关注的不只是问答本身，而是课程资料、历史学习数据、题目库和个人知识库怎样互相连接。",
-            "我希望 AI 不只是给一个答案，而是能帮助学生找到相关材料、复习薄弱点、沉淀自己的理解。这让我对知识库、检索、LLM 问答和学习体验产生了持续兴趣。",
-          ],
+          title: "我喜欢把复杂问题拆小。",
+          copy: "无论是学习助手、遗传算法还是视觉推理，我都会先把目标拆成可以验证的步骤，再通过结果反推设计是否合理。",
         },
         {
-          label: "02",
-          title: "我喜欢算法，因为它迫使你把直觉变成可检验的过程。",
-          summary: "遗传算法和视觉推理项目让我习惯用实验、对比和参数来讨论问题。",
-          details: [
-            "在线背包问题里的遗传算法项目，从编码方式、适应度函数到选择、交叉、变异，每一步都需要把“可能更好”变成能运行、能比较的流程。",
-            "跨域抽象视觉推理项目则让我更关注规则标注、解释文本和泛化验证。它们都训练我不要停在想法上，而要把想法落到可复现的实验里。",
-          ],
+          title: "我在意技术是否真的好用。",
+          copy: "对我来说，AI 应用不只是接入模型，而是把数据、场景、反馈和人的使用习惯连接起来。",
         },
         {
-          label: "03",
-          title: "我在工程项目里学到：系统价值来自长期可维护，而不是一次性做出来。",
-          summary: "联想实习和网站维护经历让我更重视后端流程、数据归档和协作边界。",
-          details: [
-            "在联想 GSG E2E 部门，我参与内部供应商系统搭建与维护，并基于 Java / Spring Boot 实现数据日期追踪和定期归档功能。",
-            "这类工作并不总是视觉上很炫，但它要求你理解业务流程、数据生命周期和团队协作方式。对我来说，这是把代码放进真实组织环境的一次重要训练。",
-          ],
+          title: "我希望进入真实团队继续成长。",
+          copy: "联想实习、网站维护和研究项目让我意识到，好的工程需要长期维护，也需要理解协作边界和业务流程。",
         },
       ],
     },
@@ -224,7 +196,7 @@ const translations = {
   en: {
     meta: {
       title: "Zigeng Guo | Personal Introduction",
-      description: "Zigeng Guo's personal introduction site: interests, learning path, project stories, technical exploration, and contact.",
+      description: "Zigeng Guo's personal introduction site: interests, learning path, technical exploration, selected projects, and contact.",
     },
     brand: "Zigeng's Homepage",
     language: { label: "Language switcher" },
@@ -235,7 +207,6 @@ const translations = {
       menuOpen: "Open navigation",
       menuClose: "Close navigation",
       about: "About",
-      stories: "Stories",
       workbench: "Workbench",
       path: "Path",
       contact: "Contact",
@@ -257,56 +228,29 @@ const translations = {
       linkEmail: "Email",
       explore: "Explore",
     },
-    signals: {
-      aria: "Personal signals",
-      items: [
-        { label: "I study", title: "Computer Science", copy: "GPA 3.9 / 4.0 and Ye Yaozhen Scholarship recipient." },
-        { label: "I build", title: "AI + Web Tools", copy: "Interested in knowledge bases, learning assistants, backend systems, and usable product experiences." },
-        { label: "I explore", title: "Vision & Algorithms", copy: "From genetic algorithms to visual reasoning, I use experiments to understand abstract problems." },
-      ],
-    },
-    intro: {
+    about: {
       kicker: "About Me",
-      title: "I do not only want to show experience. I want you to see how I understand problems.",
+      title: "I care about turning ideas into things that are clear, reliable, and usable.",
+      copy: "I study computer science and explore my direction through AI applications, engineering systems, algorithm experiments, and visual reasoning.",
       lead:
-        "A resume can tell you I use Java, Python, C++, Vue.js, Spring Boot, and MySQL. This site is here to explain why AI learning assistants, algorithm optimization, computer vision, and engineering systems keep pulling my attention.",
-      notes: [
-        "I like breaking large problems into smaller steps that can be tested.",
-        "Beyond implementation, I care whether people can actually complete their goals smoothly.",
-        "I am looking for real team environments where engineering, data, and AI applications meet.",
+        "I study computer science and keep finding my direction through AI applications, engineering systems, algorithm experiments, and visual reasoning. Rather than listing experience, I want this site to show how I observe problems, break them down, and turn them into working products or experiments.",
+      highlights: [
+        { label: "Study", title: "Computer Science", copy: "GPA 3.9 / 4.0 and Ye Yaozhen Scholarship recipient." },
+        { label: "Build", title: "AI + Web Tools", copy: "Interested in knowledge bases, learning assistants, backend systems, and usable product experiences." },
+        { label: "Explore", title: "Vision & Algorithms", copy: "From genetic algorithms to visual reasoning, I use experiments to understand abstract problems." },
       ],
-    },
-    stories: {
-      kicker: "Ways I Think",
-      title: "Three angles that say more about who I am",
-      copy: "Every item expands. Instead of a resume list, each one explains how experience becomes judgment and action for me.",
-      items: [
+      notes: [
         {
-          label: "01",
-          title: "I care about learning tools because learning material is often not scarce; it is scattered.",
-          summary: "The AI learning assistant project made me think about tools as a way to help people build their own knowledge order.",
-          details: [
-            "In the Computer Science Learning Assistant project at Nottingham, I cared not only about Q&A, but also how course materials, learning history, question banks, and personal knowledge bases could connect.",
-            "I want AI to do more than produce an answer. It should help students find related materials, review weak points, and preserve their own understanding. That is why knowledge bases, retrieval, LLM Q&A, and learning experience interest me.",
-          ],
+          title: "I like making complex problems smaller.",
+          copy: "Whether I work on learning assistants, genetic algorithms, or visual reasoning, I start by turning goals into testable steps and let results challenge the design.",
         },
         {
-          label: "02",
-          title: "I like algorithms because they force intuition to become a testable process.",
-          summary: "Genetic algorithms and visual reasoning trained me to discuss problems with experiments, comparisons, and parameters.",
-          details: [
-            "In the online knapsack genetic algorithm project, encoding, fitness functions, selection, crossover, and mutation all turned vague ideas into runnable, comparable procedures.",
-            "The cross-domain visual reasoning project pushed me toward rule annotation, explanation text, and generalization checks. Both projects trained me to move ideas into reproducible experiments.",
-          ],
+          title: "I care whether technology is actually usable.",
+          copy: "For me, an AI application is not just a model call. It is the connection between data, context, feedback, and the way people actually work.",
         },
         {
-          label: "03",
-          title: "Engineering taught me that value comes from long-term maintainability, not only from making something once.",
-          summary: "Lenovo and website maintenance work made me care about backend flows, data archiving, and collaboration boundaries.",
-          details: [
-            "At Lenovo's GSG E2E department, I contributed to an internal supplier system and implemented data date tracking and scheduled archiving with Java and Spring Boot.",
-            "This kind of work is not always visually flashy, but it requires understanding business flows, data lifecycle, and team collaboration. For me, it was important practice in placing code inside real organizational needs.",
-          ],
+          title: "I want to keep growing in real teams.",
+          copy: "Lenovo, website maintenance, and research projects taught me that good engineering needs long-term maintainability, collaboration boundaries, and business context.",
         },
       ],
     },
@@ -440,27 +384,30 @@ const createElement = (tagName, className, text) => {
   return element;
 };
 
-const renderSignals = (target, dictionary) => {
-  target.replaceChildren(
-    ...dictionary.signals.items.map((item) => {
-      const article = createElement("article");
-      article.append(
-        createElement("span", "", item.label),
-        createElement("strong", "", item.title),
-        createElement("p", "", item.copy),
-      );
-      return article;
-    }),
-  );
-};
+const renderAbout = (target, dictionary) => {
+  const intro = createElement("article", "about-intro-card");
+  intro.append(createElement("p", "lead-copy", dictionary.about.lead));
 
-const renderNotes = (target, dictionary) => {
-  target.replaceChildren(
-    ...dictionary.intro.notes.map((note) => {
-      const item = createElement("p", "note-pill", note);
-      return item;
-    }),
-  );
+  const highlights = createElement("div", "about-highlights");
+  dictionary.about.highlights.forEach((item) => {
+    const highlight = createElement("article", "about-highlight");
+    highlight.append(
+      createElement("span", "", item.label),
+      createElement("strong", "", item.title),
+      createElement("p", "", item.copy),
+    );
+    highlights.append(highlight);
+  });
+  intro.append(highlights);
+
+  const notes = createElement("div", "about-notes");
+  dictionary.about.notes.forEach((item) => {
+    const note = createElement("article", "about-note");
+    note.append(createElement("h3", "", item.title), createElement("p", "", item.copy));
+    notes.append(note);
+  });
+
+  target.replaceChildren(intro, notes);
 };
 
 const renderExpandable = (target, items, options = {}) => {
@@ -540,9 +487,7 @@ const renderContact = (target, dictionary) => {
 const renderDynamicSections = (dictionary) => {
   renderTargets.forEach((target) => {
     const type = target.dataset.render;
-    if (type === "signals") renderSignals(target, dictionary);
-    if (type === "notes") renderNotes(target, dictionary);
-    if (type === "stories") renderExpandable(target, dictionary.stories.items, { openFirst: true });
+    if (type === "about") renderAbout(target, dictionary);
     if (type === "workbench") renderProjectList(target, dictionary);
     if (type === "path") renderInternships(target, dictionary);
     if (type === "toolkit") renderToolkit(target, dictionary);

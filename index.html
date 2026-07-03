@@ -16,7 +16,6 @@
       <a class="brand" href="#top" aria-label="返回首页" data-i18n-attr="aria-label:nav.homeLabel" data-i18n="brand">Zigeng's Homepage</a>
       <nav class="nav" aria-label="主导航" data-i18n-attr="aria-label:nav.aria">
         <a href="#about" data-i18n="nav.about">关于我</a>
-        <a href="#stories" data-i18n="nav.stories">故事</a>
         <a href="#workbench" data-i18n="nav.workbench">工作台</a>
         <a href="#path" data-i18n="nav.path">路径</a>
         <a href="#contact" data-i18n="nav.contact">联系</a>
@@ -36,7 +35,6 @@
 
     <nav class="mobile-nav" aria-label="移动端导航" data-mobile-nav data-i18n-attr="aria-label:nav.mobileAria">
       <a href="#about" data-i18n="nav.about">关于我</a>
-      <a href="#stories" data-i18n="nav.stories">故事</a>
       <a href="#workbench" data-i18n="nav.workbench">工作台</a>
       <a href="#path" data-i18n="nav.path">路径</a>
       <a href="#contact" data-i18n="nav.contact">联系</a>
@@ -48,9 +46,9 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-glow primary-glow" aria-hidden="true"></div>
-        <div class="hero-glow secondary-glow" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+        <div class="hero-sheen" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="hero-avatar" aria-hidden="true">
             <span>ZG</span>
@@ -74,28 +72,15 @@
         </div>
       </section>
 
-      <section class="signal-strip" id="about" aria-label="个人线索" data-i18n-attr="aria-label:signals.aria" data-render="signals"></section>
-
-      <section class="intro-section" aria-labelledby="intro-title">
+      <section class="about-section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <p class="section-kicker" data-i18n="intro.kicker">About Me</p>
-          <h2 id="intro-title" data-i18n="intro.title">我不是只想展示经历，而是想让你看到我如何理解问题。</h2>
-        </div>
-        <div class="intro-layout">
-          <p class="lead-copy" data-i18n="intro.lead">
-            简历会告诉你我会 Java、Python、C++、Vue.js、Spring Boot 和 MySQL；这个网站更想告诉你：我为什么会对 AI 学习助手、算法优化、计算机视觉和工程系统感兴趣。
+          <p class="section-kicker" data-i18n="about.kicker">About Me</p>
+          <h2 id="about-title" data-i18n="about.title">我关注怎样把想法变成清晰、可靠、可使用的东西。</h2>
+          <p class="section-copy" data-i18n="about.copy">
+            我学习计算机科学，也在 AI 应用、工程系统、算法实验和视觉研究里寻找自己的方向。
           </p>
-          <div class="intro-notes" data-render="notes"></div>
         </div>
-      </section>
-
-      <section class="story-section" id="stories" aria-labelledby="stories-title">
-        <div class="section-heading">
-          <p class="section-kicker" data-i18n="stories.kicker">Ways I Think</p>
-          <h2 id="stories-title" data-i18n="stories.title">三个更接近“我是谁”的切面</h2>
-          <p class="section-copy" data-i18n="stories.copy">每一项都可以展开，里面不是履历清单，而是我如何把经历转化成判断和行动。</p>
-        </div>
-        <div class="expand-grid" data-render="stories"></div>
+        <div class="about-layout" data-render="about"></div>
       </section>
 
       <section class="workbench-section" id="workbench" aria-labelledby="workbench-title">
