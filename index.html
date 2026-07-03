@@ -96,18 +96,18 @@
         <div class="section-heading">
           <p class="section-kicker" data-i18n="workbench.kicker">Workbench</p>
           <h2 id="workbench-title" data-i18n="workbench.title">我做过的东西，以及它们背后的问题</h2>
-          <p class="section-copy" data-i18n="workbench.copy">项目不再只是卡片摘要。你可以展开每一项，看到目标、我负责的部分和它带给我的理解。</p>
+          <p class="section-copy" data-i18n="workbench.copy">点击任意项目，会跳出独立的项目详情页面，里面可以继续扩展背景、目标、方法和收获。</p>
         </div>
-        <div class="expand-list" data-render="workbench"></div>
+        <div class="project-list" data-render="workbench"></div>
       </section>
 
       <section class="path-section" id="path" aria-labelledby="path-title">
         <div class="section-heading">
           <p class="section-kicker" data-i18n="path.kicker">Path</p>
-          <h2 id="path-title" data-i18n="path.title">我的学习路径不是一条直线</h2>
-          <p class="section-copy" data-i18n="path.copy">这些经历来自简历，但在这里它们被放回一个人的成长路径里。</p>
+          <h2 id="path-title" data-i18n="path.title">几段让我接触真实问题的实习经历</h2>
+          <p class="section-copy" data-i18n="path.copy">这里不再铺开完整经历，只简单说明我在哪些真实场景里做过事。</p>
         </div>
-        <div class="expand-list compact" data-render="path"></div>
+        <div class="internship-list" data-render="path"></div>
       </section>
 
       <section class="toolkit-section" id="skills" aria-labelledby="toolkit-title">
@@ -121,16 +121,23 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div>
           <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
-          <h2 id="contact-title" data-i18n="contact.title">如果你想认识一个愿意把问题拆开、做成、再讲清楚的人，可以找我聊聊。</h2>
+          <h2 id="contact-title" data-i18n="contact.title">欢迎联系我。</h2>
+          <p class="section-copy" data-i18n="contact.copy">邮件点击后会直接打开你的邮件客户端。</p>
         </div>
-        <div class="contact-card">
-          <a href="mailto:pilgrim137735@gmail.com">pilgrim137735@gmail.com</a>
-          <a href="mailto:scyzg6@nottingham.edu.cn">scyzg6@nottingham.edu.cn</a>
-          <a href="tel:+8618649201011">+86 18649201011</a>
-          <p data-i18n="contact.copy">开放方向：软件开发、全栈开发、AI 应用、后端开发、数据处理和学习工具。</p>
-        </div>
+        <div class="contact-card" data-render="contact"></div>
       </section>
     </main>
+
+    <div class="project-modal" data-project-modal aria-hidden="true">
+      <div class="project-modal-backdrop" data-project-close></div>
+      <article class="project-detail" role="dialog" aria-modal="true" aria-labelledby="project-detail-title">
+        <button class="project-close" type="button" data-project-close aria-label="关闭项目详情" data-i18n-attr="aria-label:projectDetail.closeLabel">×</button>
+        <p class="section-kicker" data-project-label></p>
+        <h2 id="project-detail-title" data-project-title></h2>
+        <p class="project-detail-summary" data-project-summary></p>
+        <div class="project-detail-body" data-project-body></div>
+      </article>
+    </div>
 
     <footer class="site-footer">
       <span data-i18n="footer.copyright">© 2026 郭梓耕</span>

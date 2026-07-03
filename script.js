@@ -3,6 +3,14 @@ const menuButton = document.querySelector("[data-menu-button]");
 const mobileNav = document.querySelector("[data-mobile-nav]");
 const languageButtons = document.querySelectorAll("[data-language]");
 const renderTargets = document.querySelectorAll("[data-render]");
+const projectModal = document.querySelector("[data-project-modal]");
+const projectModalLabel = document.querySelector("[data-project-label]");
+const projectModalTitle = document.querySelector("[data-project-title]");
+const projectModalSummary = document.querySelector("[data-project-summary]");
+const projectModalBody = document.querySelector("[data-project-body]");
+const projectCloseButtons = document.querySelectorAll("[data-project-close]");
+let currentDictionary;
+let activeProjectId;
 
 const translations = {
   zh: {
@@ -24,6 +32,9 @@ const translations = {
       path: "路径",
       contact: "联系",
       cta: "联系我",
+    },
+    projectDetail: {
+      closeLabel: "关闭项目详情",
     },
     hero: {
       eyebrow: "你好，我是",
@@ -93,11 +104,11 @@ const translations = {
     workbench: {
       kicker: "Workbench",
       title: "我做过的东西，以及它们背后的问题",
-      copy: "项目不再只是卡片摘要。你可以展开每一项，看到目标、我负责的部分和它带给我的理解。",
-      expand: "展开",
-      collapse: "收起",
+      copy: "点击任意项目，会跳出独立的项目详情页面，里面可以继续扩展背景、目标、方法和收获。",
+      open: "查看详情",
       items: [
         {
+          id: "learning-assistant",
           label: "AI Learning Support",
           title: "诺丁汉大学计算机系学习助手",
           summary: "把课程资料、题库、历史学习数据和个人知识库组织起来，让 AI 真正服务学习过程。",
@@ -108,6 +119,7 @@ const translations = {
           ],
         },
         {
+          id: "genetic-algorithm",
           label: "Algorithm",
           title: "遗传算法解决在线背包问题",
           summary: "从 0 搭建遗传算法框架，通过参数调优和结果对比提升解的质量。",
@@ -118,6 +130,7 @@ const translations = {
           ],
         },
         {
+          id: "ai-agent",
           label: "Research",
           title: "Emotionally Expressive 3D AI Agent",
           summary: "探索 AI 智能体如何通过表情和语调表达情感，让交互更自然。",
@@ -128,6 +141,7 @@ const translations = {
           ],
         },
         {
+          id: "leaf-recognition",
           label: "Computer Vision",
           title: "叶子识别项目",
           summary: "基于 MTD、LBP、color model 和高斯模糊优化图像预处理与特征提取。",
@@ -138,6 +152,7 @@ const translations = {
           ],
         },
         {
+          id: "visual-reasoning",
           label: "Visual Reasoning",
           title: "跨域抽象视觉推理数据集与可泛化方法研究",
           summary: "构建 RAVEN-style 3×3 跨域抽象推理数据集，关注规则、解释和泛化。",
@@ -151,32 +166,26 @@ const translations = {
     },
     path: {
       kicker: "Path",
-      title: "我的学习路径不是一条直线",
-      copy: "这些经历来自简历，但在这里它们被放回一个人的成长路径里。",
+      title: "几段让我接触真实问题的实习经历",
+      copy: "这里不再铺开完整经历，只简单说明我在哪些真实场景里做过事。",
       items: [
-        {
-          label: "2023 - Now",
-          title: "宁波诺丁汉大学 · 计算机科学",
-          summary: "在课程和项目中建立计算机科学基础，同时把兴趣延展到 AI、视觉和工程系统。",
-          details: ["GPA 3.9 / 4.0，Year 2 / Year 3。因学术表现获得 Ye Yaozhen 奖学金。"],
-        },
         {
           label: "2025",
           title: "联想 GSG E2E 部门实习",
-          summary: "把 Java / Spring Boot 放进真实业务流程里，处理供应商系统和数据归档。",
-          details: ["这段经历让我更理解后端系统不是孤立代码，而是业务流程、数据规则和协作需求的组合。"],
+          summary: "参与内部供应商系统搭建与维护，用 Java / Spring Boot 支持数据日期追踪和定期归档。",
+          meta: "联想天津分部",
+        },
+        {
+          label: "Campus",
+          title: "全栈开发实习生",
+          summary: "参与大学官方网站开发和维护，支持页面功能更新与日常维护工作。",
+          meta: "大学官方网站开发与维护",
         },
         {
           label: "2023",
           title: "地理信息系统实习",
-          summary: "接触地理空间技术和数据研究，打开了我对数据应用场景的兴趣。",
-          details: ["这段经历虽然早，但它让我第一次把技术研究和真实空间数据联系起来。"],
-        },
-        {
-          label: "Service",
-          title: "学生档案管理志愿者",
-          summary: "整理和管理学生档案，提高数据可访问性和组织性。",
-          details: ["这件事看似简单，但它和我后来对信息组织、知识库、资料检索的兴趣有很自然的连接。"],
+          summary: "在地理信息研究部门参与技术研究任务，接触地理空间技术和数据研究方向。",
+          meta: "天津市滨海新区先进研究院",
         },
       ],
     },
@@ -200,8 +209,13 @@ const translations = {
     },
     contact: {
       kicker: "Contact",
-      title: "如果你想认识一个愿意把问题拆开、做成、再讲清楚的人，可以找我聊聊。",
-      copy: "开放方向：软件开发、全栈开发、AI 应用、后端开发、数据处理和学习工具。",
+      title: "欢迎联系我。",
+      copy: "邮件点击后会直接打开你的邮件客户端。",
+      items: [
+        { label: "个人邮箱", value: "pilgrim137735@gmail.com", href: "mailto:pilgrim137735@gmail.com" },
+        { label: "学校邮箱", value: "scyzg6@nottingham.edu.cn", href: "mailto:scyzg6@nottingham.edu.cn" },
+        { label: "电话", value: "+86 18649201011", href: "tel:+8618649201011" },
+      ],
     },
     footer: { copyright: "© 2026 郭梓耕", top: "Back to top" },
   },
@@ -224,6 +238,9 @@ const translations = {
       path: "Path",
       contact: "Contact",
       cta: "Contact",
+    },
+    projectDetail: {
+      closeLabel: "Close project detail",
     },
     hero: {
       eyebrow: "Hi, I am",
@@ -293,11 +310,11 @@ const translations = {
     workbench: {
       kicker: "Workbench",
       title: "Things I have built, and the questions behind them",
-      copy: "Projects are no longer just summaries. Expand each one to see the goal, my role, and what it taught me.",
-      expand: "Expand",
-      collapse: "Collapse",
+      copy: "Click any project to open a focused project detail page where background, goals, methods, and takeaways can be expanded.",
+      open: "View Detail",
       items: [
         {
+          id: "learning-assistant",
           label: "AI Learning Support",
           title: "Computer Science Learning Assistant for Nottingham",
           summary: "Organizing course materials, question banks, learning history, and personal knowledge bases so AI can support the learning process.",
@@ -308,6 +325,7 @@ const translations = {
           ],
         },
         {
+          id: "genetic-algorithm",
           label: "Algorithm",
           title: "Genetic Algorithm for the Online Knapsack Problem",
           summary: "Built a genetic algorithm framework from scratch and improved solution quality through parameter tuning and comparison.",
@@ -318,6 +336,7 @@ const translations = {
           ],
         },
         {
+          id: "ai-agent",
           label: "Research",
           title: "Emotionally Expressive 3D AI Agent",
           summary: "Exploring how AI agents can express emotion through facial expressions and tone for more natural interaction.",
@@ -328,6 +347,7 @@ const translations = {
           ],
         },
         {
+          id: "leaf-recognition",
           label: "Computer Vision",
           title: "Leaf Recognition Project",
           summary: "Optimized image preprocessing and feature extraction with MTD, LBP, color models, and Gaussian blur.",
@@ -338,6 +358,7 @@ const translations = {
           ],
         },
         {
+          id: "visual-reasoning",
           label: "Visual Reasoning",
           title: "Cross-Domain Abstract Visual Reasoning Dataset and Generalizable Methods",
           summary: "Building a RAVEN-style 3×3 cross-domain abstract reasoning dataset with rules, explanations, and generalization checks.",
@@ -351,32 +372,26 @@ const translations = {
     },
     path: {
       kicker: "Path",
-      title: "My learning path is not a straight line",
-      copy: "These experiences come from my resume, but here they are placed back into the growth path of a person.",
+      title: "Internships that brought me closer to real problems",
+      copy: "This section now keeps the path simple and focuses only on internship experience.",
       items: [
-        {
-          label: "2023 - Now",
-          title: "University of Nottingham Ningbo China · Computer Science",
-          summary: "Building a computer science foundation while extending my interests into AI, vision, and engineering systems.",
-          details: ["GPA 3.9 / 4.0, Year 2 / Year 3. Awarded the Ye Yaozhen Scholarship for academic excellence."],
-        },
         {
           label: "2025",
           title: "Lenovo GSG E2E Internship",
-          summary: "Used Java and Spring Boot inside real business workflows involving supplier systems and data archiving.",
-          details: ["This experience helped me see backend systems as combinations of business processes, data rules, and collaboration needs."],
+          summary: "Worked on an internal supplier system and used Java / Spring Boot to support data date tracking and scheduled archiving.",
+          meta: "Lenovo Tianjin Branch",
+        },
+        {
+          label: "Campus",
+          title: "Full-Stack Development Intern",
+          summary: "Contributed to university website development and maintenance, supporting feature updates and daily page work.",
+          meta: "University official website development and maintenance",
         },
         {
           label: "2023",
           title: "GIS Internship",
-          summary: "Gained exposure to geospatial technology and data research, opening my interest in applied data scenarios.",
-          details: ["Although this was an early experience, it connected technical research with real spatial data for me."],
-        },
-        {
-          label: "Service",
-          title: "Student Archive Management Volunteer",
-          summary: "Helped organize and manage student records to improve accessibility and structure.",
-          details: ["This connects naturally with my later interest in information organization, knowledge bases, and material retrieval."],
+          summary: "Participated in technical research tasks and gained exposure to geospatial technology and data research.",
+          meta: "Tianjin Binhai New Area Advanced Research Institute",
         },
       ],
     },
@@ -400,8 +415,13 @@ const translations = {
     },
     contact: {
       kicker: "Contact",
-      title: "If you want to meet someone who likes taking problems apart, building them, and explaining them clearly, let's talk.",
-      copy: "Open directions: software development, full-stack development, AI applications, backend development, data processing, and learning tools.",
+      title: "Feel free to contact me.",
+      copy: "Clicking an email address will open your mail app.",
+      items: [
+        { label: "Personal Email", value: "pilgrim137735@gmail.com", href: "mailto:pilgrim137735@gmail.com" },
+        { label: "University Email", value: "scyzg6@nottingham.edu.cn", href: "mailto:scyzg6@nottingham.edu.cn" },
+        { label: "Phone", value: "+86 18649201011", href: "tel:+8618649201011" },
+      ],
     },
     footer: { copyright: "© 2026 Zigeng Guo", top: "Back to top" },
   },
@@ -461,6 +481,38 @@ const renderExpandable = (target, items, options = {}) => {
   );
 };
 
+const renderProjectList = (target, dictionary) => {
+  target.replaceChildren(
+    ...dictionary.workbench.items.map((item) => {
+      const button = createElement("button", "project-teaser");
+      button.type = "button";
+      button.dataset.projectId = item.id;
+      button.append(
+        createElement("span", "project-teaser-label", item.label),
+        createElement("strong", "", item.title),
+        createElement("p", "", item.summary),
+        createElement("em", "", dictionary.workbench.open),
+      );
+      return button;
+    }),
+  );
+};
+
+const renderInternships = (target, dictionary) => {
+  target.replaceChildren(
+    ...dictionary.path.items.map((item) => {
+      const article = createElement("article", "internship-item");
+      article.append(
+        createElement("span", "internship-date", item.label),
+        createElement("strong", "", item.title),
+        createElement("small", "", item.meta),
+        createElement("p", "", item.summary),
+      );
+      return article;
+    }),
+  );
+};
+
 const renderToolkit = (target, dictionary) => {
   target.replaceChildren(
     ...dictionary.toolkit.items.map((item) => {
@@ -471,20 +523,59 @@ const renderToolkit = (target, dictionary) => {
   );
 };
 
+const renderContact = (target, dictionary) => {
+  target.replaceChildren(
+    ...dictionary.contact.items.map((item) => {
+      const row = createElement("a", "contact-row");
+      row.href = item.href;
+      row.append(createElement("span", "", item.label), createElement("strong", "", item.value));
+      return row;
+    }),
+  );
+};
+
 const renderDynamicSections = (dictionary) => {
   renderTargets.forEach((target) => {
     const type = target.dataset.render;
     if (type === "signals") renderSignals(target, dictionary);
     if (type === "notes") renderNotes(target, dictionary);
     if (type === "stories") renderExpandable(target, dictionary.stories.items, { openFirst: true });
-    if (type === "workbench") renderExpandable(target, dictionary.workbench.items, { openFirst: true });
-    if (type === "path") renderExpandable(target, dictionary.path.items, { compact: true });
+    if (type === "workbench") renderProjectList(target, dictionary);
+    if (type === "path") renderInternships(target, dictionary);
     if (type === "toolkit") renderToolkit(target, dictionary);
+    if (type === "contact") renderContact(target, dictionary);
   });
+};
+
+const openProjectDetail = (projectId) => {
+  const project = currentDictionary.workbench.items.find((item) => item.id === projectId);
+  if (!project) return;
+  activeProjectId = projectId;
+
+  projectModalLabel.textContent = project.label;
+  projectModalTitle.textContent = project.title;
+  projectModalSummary.textContent = project.summary;
+  projectModalBody.replaceChildren(
+    ...project.details.map((detail) => {
+      const paragraph = createElement("p", "", detail);
+      return paragraph;
+    }),
+  );
+  projectModal.classList.add("is-open");
+  projectModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+};
+
+const closeProjectDetail = () => {
+  activeProjectId = undefined;
+  projectModal.classList.remove("is-open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
 };
 
 const applyLanguage = (language) => {
   const dictionary = translations[language] ?? translations.zh;
+  currentDictionary = dictionary;
   document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
   document.title = dictionary.meta.title;
 
@@ -502,6 +593,7 @@ const applyLanguage = (language) => {
   });
 
   renderDynamicSections(dictionary);
+  if (activeProjectId) openProjectDetail(activeProjectId);
 
   languageButtons.forEach((button) => {
     const isActive = button.dataset.language === language;
@@ -544,4 +636,21 @@ languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     applyLanguage(button.dataset.language);
   });
+});
+
+document.addEventListener("click", (event) => {
+  const projectButton = event.target.closest("[data-project-id]");
+  if (projectButton) {
+    openProjectDetail(projectButton.dataset.projectId);
+  }
+});
+
+projectCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeProjectDetail);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && projectModal.classList.contains("is-open")) {
+    closeProjectDetail();
+  }
 });
