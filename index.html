@@ -1,157 +1,273 @@
 <!doctype html>
-<html lang="zh-CN">
+<html class="no-js" lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="郭梓耕的个人介绍网站：关于兴趣、学习路径、项目故事、技术探索和联系方式。"
-      data-i18n-attr="content:meta.description"
-    />
-    <title>郭梓耕 | 个人介绍</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="郭梓耕 Zigeng Guo 的个人展示网站：计算机科学、AI 应用、全栈开发、算法实验、计算机视觉与实习经历。">
+    <title>郭梓耕 Zigeng Guo | Personal Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/portfolio-custom.css">
   </head>
+
   <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="返回首页" data-i18n-attr="aria-label:nav.homeLabel" data-i18n="brand">Zigeng's Homepage</a>
-      <nav class="nav" aria-label="主导航" data-i18n-attr="aria-label:nav.aria">
-        <a href="#about" data-i18n="nav.about">关于我</a>
-        <a href="#workbench" data-i18n="nav.workbench">工作台</a>
-        <a href="#path" data-i18n="nav.path">路径</a>
-        <a href="#contact" data-i18n="nav.contact">联系</a>
-      </nav>
-      <div class="header-tools">
-        <div class="language-switcher" aria-label="语言切换" data-i18n-attr="aria-label:language.label">
-          <button class="language-option is-active" type="button" data-language="zh">中文</button>
-          <button class="language-option" type="button" data-language="en">EN</button>
-        </div>
-        <a class="header-action" href="mailto:pilgrim137735@gmail.com" data-i18n="nav.cta">联系我</a>
+    <header class="top-area">
+      <div class="header-area">
+        <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand" href="#welcome-hero">Zigeng Guo</a>
+            </div>
+            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+              <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                <li class="smooth-menu active"></li>
+                <li class="smooth-menu"><a href="#about">about</a></li>
+                <li class="smooth-menu"><a href="#education">education</a></li>
+                <li class="smooth-menu"><a href="#skills">skills</a></li>
+                <li class="smooth-menu"><a href="#experience">experience</a></li>
+                <li class="smooth-menu"><a href="#profiles">focus</a></li>
+                <li class="smooth-menu"><a href="#portfolio">projects</a></li>
+                <li class="smooth-menu"><a href="#contact">contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
-      <button class="menu-button" type="button" aria-label="打开导航" data-menu-button data-i18n-attr="aria-label:nav.menuOpen">
-        <span></span>
-        <span></span>
-      </button>
+      <div class="clearfix"></div>
     </header>
 
-    <nav class="mobile-nav" aria-label="移动端导航" data-mobile-nav data-i18n-attr="aria-label:nav.mobileAria">
-      <a href="#about" data-i18n="nav.about">关于我</a>
-      <a href="#workbench" data-i18n="nav.workbench">工作台</a>
-      <a href="#path" data-i18n="nav.path">路径</a>
-      <a href="#contact" data-i18n="nav.contact">联系</a>
-      <div class="mobile-language" aria-label="语言切换" data-i18n-attr="aria-label:language.label">
-        <button class="language-option is-active" type="button" data-language="zh">中文</button>
-        <button class="language-option" type="button" data-language="en">EN</button>
-      </div>
-    </nav>
-
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grain" aria-hidden="true"></div>
-        <div class="hero-ring hero-ring-a" aria-hidden="true"></div>
-        <div class="hero-ring hero-ring-b" aria-hidden="true"></div>
-        <div class="hero-content">
-          <div class="hero-avatar" aria-hidden="true">
-            <span data-i18n="hero.initials">ZG</span>
+    <section id="welcome-hero" class="welcome-hero zigeng-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="header-text">
+              <span class="hero-kicker">Computer Science · AI Applications · Full-Stack</span>
+              <h2>hi <span>,</span> i am <br> Zigeng <br> Guo <span>.</span></h2>
+              <p>我把学习、工程和 AI 实验连接成可以使用的产品与系统。</p>
+              <a href="assets/download/zigeng-guo-profile.txt" download>download profile</a>
+            </div>
           </div>
-          <p class="eyebrow" data-i18n="hero.eyebrow">Zigeng's Homepage</p>
-          <h1 id="hero-title">
-            <span data-i18n="hero.title">Zigeng Guo</span>
-            <small data-i18n="hero.chineseName">郭梓耕</small>
-          </h1>
-          <p class="hero-role" data-i18n="hero.role">Computer Science · AI Applications · Full-Stack</p>
-          <p class="hero-tagline">
-            <span data-i18n="hero.taglinePrefix">Building tools that</span>
-            <strong data-i18n="hero.highlight">organize knowledge</strong>
-          </p>
-          <div class="hero-actions" aria-label="首页快捷入口" data-i18n-attr="aria-label:hero.actionsLabel">
-            <a class="button secondary" href="#about" data-i18n="hero.linkAbout">About</a>
-            <a class="button secondary" href="#workbench" data-i18n="hero.linkProjects">Projects</a>
-            <a class="button secondary" href="mailto:pilgrim137735@gmail.com" data-i18n="hero.linkEmail">Email</a>
-          </div>
-          <a class="explore-cue" href="#about" data-i18n="hero.explore">Explore</a>
-        </div>
-        <div class="hero-meta" aria-label="个人关键词" data-i18n-attr="aria-label:hero.metaLabel">
-          <span data-i18n="hero.metaOne">AI Applications</span>
-          <span data-i18n="hero.metaTwo">Full-Stack Systems</span>
-          <span data-i18n="hero.metaThree">Visual Reasoning</span>
-        </div>
-      </section>
-
-      <div class="ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <span>AI APPLICATIONS</span>
-          <span>ENGINEERING SYSTEMS</span>
-          <span>VISUAL REASONING</span>
-          <span>KNOWLEDGE TOOLS</span>
-          <span>AI APPLICATIONS</span>
-          <span>ENGINEERING SYSTEMS</span>
-          <span>VISUAL REASONING</span>
-          <span>KNOWLEDGE TOOLS</span>
         </div>
       </div>
+    </section>
 
-      <section class="about-section numbered-section" id="about" aria-labelledby="about-title" data-section-number="01">
-        <div class="section-heading" data-section-number="01">
-          <p class="section-kicker" data-i18n="about.kicker">About Me</p>
-          <h2 id="about-title" data-i18n="about.title">我关注怎样把想法变成清晰、可靠、可使用的东西。</h2>
-          <p class="section-copy" data-i18n="about.copy">
-            我学习计算机科学，也在 AI 应用、工程系统、算法实验和视觉研究里寻找自己的方向。
-          </p>
+    <section id="about" class="about">
+      <div class="section-heading text-center">
+        <h2>about me</h2>
+      </div>
+      <div class="container">
+        <div class="about-content">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="single-about-txt">
+                <h3>
+                  我是郭梓耕，一名计算机科学方向的学生，关注 AI 应用、全栈系统、算法实验和计算机视觉。我希望把复杂问题拆成清晰步骤，再用工程方法做成可靠、可维护、真正有用的东西。
+                </h3>
+                <p>
+                  我的项目经历覆盖 AI 学习助手、在线背包问题遗传算法、3D 情感表达 AI Agent、叶子识别和跨域抽象视觉推理。我喜欢在“能运行”之外继续追问：数据是否组织清楚、用户是否真的顺手、系统是否能长期维护、实验结论是否可复现。
+                </p>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="single-about-add-info">
+                      <h3>phone</h3>
+                      <p><a href="tel:+8618649201011">+86 18649201011</a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="single-about-add-info">
+                      <h3>email</h3>
+                      <p><a href="mailto:pilgrim137735@gmail.com">pilgrim137735@gmail.com</a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="single-about-add-info">
+                      <h3>university</h3>
+                      <p>University of Nottingham</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-offset-1 col-sm-5">
+              <div class="single-about-img profile-panel">
+                <div class="profile-monogram">ZG</div>
+                <div class="profile-caption">
+                  <strong>Zigeng Guo</strong>
+                  <span>Building useful AI + web systems</span>
+                </div>
+                <div class="about-list-icon">
+                  <ul>
+                    <li><a href="mailto:pilgrim137735@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                    <li><a href="mailto:scyzg6@nottingham.edu.cn"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+                    <li><a href="#portfolio"><i class="fa fa-code" aria-hidden="true"></i></a></li>
+                    <li><a href="#contact"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="about-layout" data-render="about"></div>
-      </section>
+      </div>
+    </section>
 
-      <section class="workbench-section numbered-section" id="workbench" aria-labelledby="workbench-title" data-section-number="02">
-        <div class="section-heading" data-section-number="02">
-          <p class="section-kicker" data-i18n="workbench.kicker">Workbench</p>
-          <h2 id="workbench-title" data-i18n="workbench.title">我做过的东西，以及它们背后的问题</h2>
-          <p class="section-copy" data-i18n="workbench.copy">点击任意项目，会跳出独立的项目详情页面，里面可以继续扩展背景、目标、方法和收获。</p>
+    <section id="education" class="education">
+      <div class="section-heading text-center">
+        <h2>education</h2>
+      </div>
+      <div class="container">
+        <div class="education-horizontal-timeline">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="single-horizontal-timeline">
+                <div class="experience-time">
+                  <h2>2022 - present</h2>
+                  <h3>BSc <span>in </span> computer science</h3>
+                </div>
+                <div class="timeline-horizontal-border"><i class="fa fa-circle" aria-hidden="true"></i><span class="single-timeline-horizontal"></span></div>
+                <div class="timeline"><div class="timeline-content">
+                  <h4 class="title">University of Nottingham</h4>
+                  <h5>computer science</h5>
+                  <p class="description">GPA 3.9 / 4.0。系统学习数据结构、算法、数据库、软件工程、人工智能和计算机视觉等方向。</p>
+                </div></div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="single-horizontal-timeline">
+                <div class="experience-time">
+                  <h2>scholarship</h2>
+                  <h3>Ye Yaozhen <span>Scholarship</span></h3>
+                </div>
+                <div class="timeline-horizontal-border"><i class="fa fa-circle" aria-hidden="true"></i><span class="single-timeline-horizontal"></span></div>
+                <div class="timeline"><div class="timeline-content">
+                  <h4 class="title">academic recognition</h4>
+                  <h5>GPA 3.9 / 4.0</h5>
+                  <p class="description">持续保持较高学业表现，同时把课程知识应用到 AI、算法和工程项目中。</p>
+                </div></div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="single-horizontal-timeline">
+                <div class="experience-time">
+                  <h2>research</h2>
+                  <h3>visual <span>reasoning</span></h3>
+                </div>
+                <div class="timeline-horizontal-border"><i class="fa fa-circle" aria-hidden="true"></i><span class="single-timeline-horizontal spacial-horizontal-line"></span></div>
+                <div class="timeline"><div class="timeline-content">
+                  <h4 class="title">cross-domain reasoning</h4>
+                  <h5>ongoing project</h5>
+                  <p class="description">构建 RAVEN-style 3×3 抽象视觉推理数据集，关注规则、解释和泛化验证。</p>
+                </div></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="project-list" data-render="workbench"></div>
-      </section>
+      </div>
+    </section>
 
-      <section class="path-section numbered-section" id="path" aria-labelledby="path-title" data-section-number="03">
-        <div class="section-heading" data-section-number="03">
-          <p class="section-kicker" data-i18n="path.kicker">Path</p>
-          <h2 id="path-title" data-i18n="path.title">实习经历</h2>
-          <p class="section-copy" data-i18n="path.copy">这里不再铺开完整经历，只简单说明我在哪些真实场景里做过事。</p>
+    <section id="skills" class="skills">
+      <div class="skill-content">
+        <div class="section-heading text-center"><h2>skills</h2></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6"><div class="single-skill-content">
+              <div class="barWrapper"><span class="progressText">Java / Spring Boot</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="10" aria-valuemax="100"></div></div><h3>88%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">Python / ML Experiments</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="10" aria-valuemax="100"></div></div><h3>86%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">C++ / Algorithm Design</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="10" aria-valuemax="100"></div></div><h3>82%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">MySQL / Database Design</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="84" aria-valuemin="10" aria-valuemax="100"></div></div><h3>84%</h3></div></div>
+            </div></div>
+            <div class="col-md-6"><div class="single-skill-content">
+              <div class="barWrapper"><span class="progressText">Vue.js / Web Frontend</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="84" aria-valuemin="10" aria-valuemax="100"></div></div><h3>84%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">LLM / Knowledge Base Apps</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="10" aria-valuemax="100"></div></div><h3>82%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">Computer Vision</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="10" aria-valuemax="100"></div></div><h3>78%</h3></div></div>
+              <div class="barWrapper"><span class="progressText">Experiment Design</span><div class="single-progress-txt"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="10" aria-valuemax="100"></div></div><h3>86%</h3></div></div>
+            </div></div>
+          </div>
         </div>
-        <div class="internship-list" data-render="path"></div>
-      </section>
+      </div>
+    </section>
 
-      <section class="toolkit-section numbered-section" id="skills" aria-labelledby="toolkit-title" data-section-number="04">
-        <div class="section-heading" data-section-number="04">
-          <p class="section-kicker" data-i18n="toolkit.kicker">Toolkit</p>
-          <h2 id="toolkit-title" data-i18n="toolkit.title">工具只是工具，真正重要的是我用它们解决什么。</h2>
+    <section id="experience" class="experience">
+      <div class="section-heading text-center"><h2>experience</h2></div>
+      <div class="container"><div class="experience-content"><div class="main-timeline"><ul>
+        <li><div class="single-timeline-box fix"><div class="row"><div class="col-md-5"><div class="experience-time text-right"><h2>2025</h2><h3>software development intern</h3></div></div><div class="col-md-offset-1 col-md-5"><div class="timeline"><div class="timeline-content"><h4 class="title"><span><i class="fa fa-circle" aria-hidden="true"></i></span>Lenovo GSG E2E Department</h4><h5>Tianjin, China</h5><p class="description">参与内部供应商系统搭建与维护，使用 Java / Spring Boot 支持数据日期追踪、定期归档和后端流程维护。</p></div></div></div></div></div></li>
+        <li><div class="single-timeline-box fix"><div class="row"><div class="col-md-offset-1 col-md-5 experience-time-responsive"><div class="experience-time"><h2><span><i class="fa fa-circle" aria-hidden="true"></i></span>Campus</h2><h3>full-stack development intern</h3></div></div><div class="col-md-5"><div class="timeline"><div class="timeline-content text-right"><h4 class="title">University Website Development</h4><h5>web development and maintenance</h5><p class="description">参与大学官方网站开发和维护，支持页面功能更新、前后端协作和日常内容维护。</p></div></div></div><div class="col-md-offset-1 col-md-5 experience-time-main"><div class="experience-time"><h2><span><i class="fa fa-circle" aria-hidden="true"></i></span>Campus</h2><h3>full-stack development intern</h3></div></div></div></div></li>
+        <li><div class="single-timeline-box fix"><div class="row"><div class="col-md-5"><div class="experience-time text-right"><h2>2023</h2><h3>GIS research intern</h3></div></div><div class="col-md-offset-1 col-md-5"><div class="timeline"><div class="timeline-content"><h4 class="title"><span><i class="fa fa-circle" aria-hidden="true"></i></span>Tianjin Binhai Advanced Research Institute</h4><h5>geospatial technology research</h5><p class="description">在地理信息研究部门参与技术研究任务，接触地理空间技术、数据研究和技术文档整理。</p></div></div></div></div></div></li>
+      </ul></div></div></div>
+    </section>
+
+    <section id="profiles" class="profiles focus-section">
+      <div class="profiles-details">
+        <div class="section-heading text-center"><h2>focus areas</h2></div>
+        <div class="container"><div class="profiles-content"><div class="row">
+          <div class="col-sm-3"><div class="single-profile"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-graduation-cap"></i></a><div class="profile-icon-name">AI Learning Tools</div></div><div class="single-profile-overlay"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-graduation-cap"></i></a><div class="profile-icon-name">Learning Assistant</div></div></div></div></div>
+          <div class="col-sm-3"><div class="single-profile"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-server"></i></a><div class="profile-icon-name">Backend Systems</div></div><div class="single-profile-overlay"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-server"></i></a><div class="profile-icon-name">Spring Boot / MySQL</div></div></div></div></div>
+          <div class="col-sm-3"><div class="single-profile"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-random"></i></a><div class="profile-icon-name">Algorithms</div></div><div class="single-profile-overlay"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-random"></i></a><div class="profile-icon-name">GA / Optimization</div></div></div></div></div>
+          <div class="col-sm-3"><div class="single-profile profile-no-border"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-eye"></i></a><div class="profile-icon-name">Computer Vision</div></div><div class="single-profile-overlay"><div class="profile-txt"><a href="#portfolio"><i class="fa fa-eye"></i></a><div class="profile-icon-name">Visual Reasoning</div></div></div></div></div>
+        </div></div></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="portfolio-details">
+        <div class="section-heading text-center"><h2>projects</h2></div>
+        <div class="container"><div class="portfolio-content project-grid"><div class="row">
+          <div class="col-sm-4"><article class="project-card"><span>01 · AI Learning Support</span><h3>诺丁汉大学计算机系学习助手</h3><p>组织课程资料、题库、历史学习数据和个人知识库，让 AI 更好服务复习、问答和知识沉淀。</p></article></div>
+          <div class="col-sm-4"><article class="project-card featured"><span>02 · Visual Reasoning</span><h3>跨域抽象视觉推理数据集</h3><p>构建 RAVEN-style 3×3 数据集，关注规则标注、解释文本、泛化验证和可解释性。</p></article></div>
+          <div class="col-sm-4"><article class="project-card"><span>03 · Algorithm</span><h3>遗传算法解决在线背包问题</h3><p>从编码、适应度函数到选择、交叉、变异，搭建可对比、可调参的算法实验流程。</p></article></div>
+          <div class="col-sm-4"><article class="project-card"><span>04 · AI Agent</span><h3>Emotionally Expressive 3D AI Agent</h3><p>探索 3D 智能体如何通过面部表情和语调表达情感，让交互更自然。</p></article></div>
+          <div class="col-sm-4"><article class="project-card"><span>05 · Computer Vision</span><h3>叶子识别项目</h3><p>使用 MTD、LBP、color model 和高斯模糊优化图像预处理与特征提取。</p></article></div>
+          <div class="col-sm-4"><article class="project-card"><span>06 · Web System</span><h3>大学官方网站开发维护</h3><p>参与页面功能更新、维护流程和 Web 系统协作，让项目稳定服务真实使用场景。</p></article></div>
+        </div></div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-heading text-center"><h2>contact me</h2></div>
+      <div class="container"><div class="contact-content"><div class="row">
+        <div class="col-md-offset-1 col-md-5 col-sm-6">
+          <div class="single-contact-box contact-note">
+            <h3>Let’s build something useful.</h3>
+            <p>如果你想了解我的项目、实习经历，或有 AI 应用 / 全栈开发 / 计算机视觉相关机会，欢迎直接邮件联系我。</p>
+            <a class="contact-btn" href="mailto:pilgrim137735@gmail.com">send email</a>
+          </div>
         </div>
-        <div class="toolkit-layout" data-render="toolkit"></div>
-      </section>
-
-      <section class="contact-section numbered-section" id="contact" aria-labelledby="contact-title" data-section-number="05">
-        <div class="section-heading" data-section-number="05">
-          <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
-          <h2 id="contact-title" data-i18n="contact.title">欢迎联系我。</h2>
+        <div class="col-md-offset-1 col-md-5 col-sm-6">
+          <div class="single-contact-box"><div class="contact-adress"><div class="contact-add-head"><h3>Zigeng Guo</h3><p>Computer Science · AI Applications · Full-Stack</p></div><div class="contact-add-info">
+            <div class="single-contact-add-info"><h3>personal email</h3><p><a href="mailto:pilgrim137735@gmail.com">pilgrim137735@gmail.com</a></p></div>
+            <div class="single-contact-add-info"><h3>university email</h3><p><a href="mailto:scyzg6@nottingham.edu.cn">scyzg6@nottingham.edu.cn</a></p></div>
+            <div class="single-contact-add-info"><h3>phone</h3><p><a href="tel:+8618649201011">+86 18649201011</a></p></div>
+          </div></div></div>
         </div>
-        <div class="contact-card" data-render="contact"></div>
-      </section>
-    </main>
+      </div></div></div>
+    </section>
 
-    <div class="project-modal" data-project-modal aria-hidden="true">
-      <div class="project-modal-backdrop" data-project-close></div>
-      <article class="project-detail" role="dialog" aria-modal="true" aria-labelledby="project-detail-title">
-        <button class="project-close" type="button" data-project-close aria-label="关闭项目详情" data-i18n-attr="aria-label:projectDetail.closeLabel">×</button>
-        <p class="section-kicker" data-project-label></p>
-        <h2 id="project-detail-title" data-project-title></h2>
-        <p class="project-detail-summary" data-project-summary></p>
-        <div class="project-detail-body" data-project-body></div>
-      </article>
-    </div>
-
-    <footer class="site-footer">
-      <span data-i18n="footer.copyright">© 2026 郭梓耕</span>
-      <a href="#top" data-i18n="footer.top">Back to top</a>
+    <footer id="footer-copyright" class="footer-copyright">
+      <div class="container"><div class="hm-footer-copyright text-center"><p>© 2026 Zigeng Guo. Built with Browny template and customized personal content.</p></div></div>
+      <div id="scroll-Top"><div class="return-to-top"><i class="fa fa-angle-up" id="scroll-top"></i></div></div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/progressbar.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/custom.js"></script>
   </body>
 </html>

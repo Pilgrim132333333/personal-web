@@ -1,21 +1,17 @@
-# 郭梓耕个人介绍网站
+# 郭梓耕个人展示网站
 
-这是一个深色风格的静态个人介绍网站。它不再以简历卡片为主，而是用简历内容作为素材，讲清楚个人兴趣、思考方式、项目背后的问题、学习路径和联系方式。
+这是基于 `browny-v1.0` 模板改造的个人展示网站，已替换为郭梓耕的个人内容。
 
-## 文件结构
+## 当前结构
 
-- `index.html`: 页面骨架，包含首屏、About me、工作台、路径、工具箱与联系方式
-- `styles.css`: Sampo 灵感的高对比视觉系统、章节编号、滚动标签带、响应式布局和展开面板样式
-- `script.js`: 顶部导航、移动端菜单、中英文切换、本地语言记忆、项目详情弹层和动态内容渲染
-- `assets/hero-studio.png`: 首屏背景图
+- `index.html`: Browny 单页网站结构，包含首页、About、Education、Skills、Experience、Focus、Projects、Contact。
+- `assets/`: Browny 模板资源，包括 Bootstrap、Font Awesome、脚本、图片和字体。
+- `assets/css/portfolio-custom.css`: 在 Browny 原样式之上的自定义优化样式。
+- `assets/download/zigeng-guo-profile.txt`: 简短个人 profile 下载文件。
 
-## 当前特点
+## 内容重点
 
-- 内容定位是“自我介绍网站”，不是简历复刻。
-- 视觉参考 Sampo 的作品集气质：超大标题、酸绿色强调、硬朗边框、章节编号和横向滚动标签带。
-- 首屏下方原本分散的三个栏目已合并为一个 `About me` 模块。
-- Workbench 中的每个项目都可以点击打开项目详情页面。
-- 项目详情支持继续扩展背景、目标、方法和收获。
-- Path 区域只保留简洁的实习经历介绍。
-- Contact 区域使用分条联系方式，邮箱点击后会打开邮件客户端。
-- 支持中文和英文两个语言版本，并会记住用户选择。
+- 个人定位：Computer Science · AI Applications · Full-Stack。
+- 项目：AI 学习助手、跨域视觉推理、遗传算法、3D AI Agent、叶子识别、大学官网维护。
+- 经历：Lenovo GSG E2E、大学官网全栈开发、GIS 研究实习。
+- 联系方式：邮箱和电话均可点击跳转。
